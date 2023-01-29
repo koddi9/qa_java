@@ -25,7 +25,7 @@ public class FelineTest {
     }
 
     @Test
-    public void getKittensTest_randomCount() {
+    public void getKittensTestRandomCount() {
         int kittensCount = feline.getKittens(11);
         assertEquals(11, kittensCount);
     }

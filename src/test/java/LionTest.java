@@ -18,21 +18,21 @@ public class LionTest {
     Feline feline;
 
     @Test
-    public void lionInit_validMaleSex() throws Exception {
+    public void lionInitValidMaleSex() throws Exception {
         String sex = "Самец";
         Lion lion = new Lion(feline, sex);
         assertTrue(lion.doesHaveMane());
     }
 
     @Test
-    public void lionInit_validFemaleSex() throws Exception {
+    public void lionInitValidFemaleSex() throws Exception {
         String sex = "Самка";
         Lion lion = new Lion(feline, sex);
         assertFalse(lion.doesHaveMane());
     }
 
     @Test(expected = Exception.class)
-    public void lionInit_invalidSex_throwsException() throws Exception {
+    public void lionInitInvalidSexThrowsException() throws Exception {
         String sex = "invalidSex";
         Lion lion = new Lion(feline, sex);
     }
@@ -43,7 +43,7 @@ public class LionTest {
         Lion lion = new Lion(feline, "Самка");
         List<String> food = lion.getFood();
         assertTrue(food.isEmpty());
-        verify(feline,times(1)).getFood("Хищник");
+        verify(feline, times(1)).getFood("Хищник");
     }
 
     @Test
@@ -52,6 +52,6 @@ public class LionTest {
         Lion lion = new Lion(feline, "Самка");
         int kittensCount = lion.getKittens();
         assertEquals(1, kittensCount);
-        verify(feline,times(1)).getKittens();
+        verify(feline, times(1)).getKittens();
     }
 }
